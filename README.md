@@ -1,8 +1,8 @@
-# Demonstration of following web application created by ansible playbook
+## Demonstration of following web application created by ansible playbook
 
 Update inventory for managed hosts - Docker containers or VMS and start
 
-# Simple Web Application
+## Simple Web Application
 
 This is a simple web application using [Python Flask](http://flask.pocoo.org/) and [MySQL](https://www.mysql.com/) database.
 This is used in the demonstration of development of Ansible Playbooks.
