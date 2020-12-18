@@ -1,5 +1,6 @@
-#Following sample application wil be created by ansible playbook
-update inventory for managed hosts - Docker containers or VMS and start
+# Demonstration of following web application created by ansible playbook
+
+Update inventory for managed hosts - Docker containers or VMS and start
 
 # Simple Web Application
 
