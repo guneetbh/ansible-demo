@@ -1,0 +1,20 @@
+- name: Deploy Web Application
+  hosts: all
+  any_errors_fatal: true
+  roles:
+    - python
+
+- name: Install MySQL
+  hosts: db
+  roles:
+    - mysqldb
+
+- name: Install and run web app
+  hosts: web
+  roles:
+    - flask_web
+
+- name: Install maven
+  hosts: maven
+  roles:
+    - maven

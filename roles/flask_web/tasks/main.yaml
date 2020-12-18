@@ -1,0 +1,20 @@
+   - name: install flask dependencies
+     pip:
+       name: '{{ item }}'
+       state: present
+     loop:
+       - flask
+       - flask-mysql
+
+
+   - name: copy source code file app.py
+     copy: src=app.py dest=/opt/app.py mode=0555
+
+
+   - name: start webserver
+     shell: 'FLASK_APP=/opt/app.py nohup flask run --host=0.0.0.0 < /dev/null > ~/app.log 2>&1 &'
+
+   - name: Fail when there is error in log
+     command: ~/app.log
+     register: command_output
+     failed_when: "'Error' in command_output"

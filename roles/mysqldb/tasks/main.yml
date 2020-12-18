@@ -1,0 +1,27 @@
+---
+# tasks file for mysqldb
+   - name: Install MySQL database
+     apt:
+      name: '{{ item }}'
+      state: present
+     loop:
+       - mysql-server
+       - mysql-client
+       - python3-pymysql
+
+   - name: Start mysql service
+     command: service mysql start
+
+
+   - name: Create application database
+     mysql_db:
+       name: test_db
+       state: present
+
+
+   - name: create databse user
+     mysql_user:
+        name: db_user
+        password: Passw0rd
+        priv: '*.*:ALL'
+        state: present
